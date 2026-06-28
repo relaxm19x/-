@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المركز الوطني للإستشارات والسلامة المهنية</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-red: #c92a2a;
+            --dark-black: #212529;
+            --light-white: #ffffff;
+            --gray-bg: #f8f9fa;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-white);
+            color: var(--dark-black);
+        }
+        .text-red { color: var(--primary-red); }
+        .bg-red { background-color: var(--primary-red); color: white; }
+        .bg-red:hover { background-color: #b02323; color: white; }
+        .navbar {
+            border-bottom: 3px solid var(--primary-red);
+        }
+        .hero-section {
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80') no-repeat center center;
+            background-size: cover;
+            padding: 80px 0;
+        }
+        .card-course {
+            border: 1px solid #dee2e6;
+            transition: transform 0.3s;
+        }
+        .card-course:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .protected-content {
+            display: none;
+            background-color: var(--gray-bg);
+            border-left: 5px solid var(--primary-red);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-red" href="#">
+                <i class="fa-solid fa-heart-pulse me-2"></i> المركز الوطني للإستشارات والسلامة المهنية
+            </a>
+            <button class="navbar-collapse-toggler d-lg-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-semibold">
+                    <li class="nav-item"><a class="nav-link text-dark" href="#about">من نحن / About</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="#courses">الدورات / Courses</a></li>
+                </ul>
+                <div class="d-flex align-items-center ms-lg-3">
+                    <button class="btn btn-outline-dark position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <i class="fa-solid fa-cart-shopping"></i> السلة / Cart
+                        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-red">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section text-center text-dark">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">المركز الوطني للإستشارات والسلامة المهنية</h1>
+            <p class="lead fw-medium text-red">National Center for Consultation and Occupational Safety</p>
+            <p class="text-muted max-w-600 mx-auto">بوابتكم الاحترافية للتدريب على الإسعافات الأولية، إدارة الكوارث، والسلامة المهنية والمدرسية.</p>
+            <a href="#courses" class="btn bg-red btn-lg px-4 mt-3">استعرض الدورات / Browse Courses</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="fw-bold mb-3 text-dark">من نحن <span class="text-red">/ About Us</span></h2>
+                    <p class="lead text-muted">نحن مؤسسة وطنية رائدة متخصصة في تقديم الاستشارات والبرامج التدريبية المعتمدة في مجالات الصحة، السلامة المهنية، إدارة الكوارث، والإسعافات الأولية المتقدمة.</p>
+                    <p>نهدف إلى رفع الوعي وبناء قدرات الكوادر الطبية والتعليمية والمجتمعية للتعامل مع الحالات الطارئة والكوارث بكفاءة واحترافية عالية لحماية الأرواح والممتلكات.</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=500&q=80" alt="Safety and Health" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-dark">دوراتنا التدريبية <span class="text-red">/ Our Courses</span></h2>
+                <p class="text-muted">اختر دورتك وسجل الآن للحصول على المحتوى الحصري والشهادات المعتمدة</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Course 1 -->
+                <div class="col-md-6">
+                    <div class="card h-100 card-course bg-white">
+                        <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="BLS Course">
+                        <div class="card-body">
+                            <span class="badge bg-red mb-2">طبي / Medical</span>
+                            <h4 class="card-title fw-bold text-dark">دعم وإنعاش الحياة الأساسي (BLS)</h4>
+                            <p class="text-muted small">Basic Life Support for Healthcare Providers</p>
+                            <p class="card-text">دورة مخصصة للعاملين في المجال الطبي تغطي أساسيات إنعاش القلب والرئتين (CPR)، واستخدام مزيل الرجفان الخارجي الآلي (AED)، وفك الاختناق.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <span class="fs-4 fw-bold text-red">350 ر.س</span>
+                                <button class="btn btn-dark" onclick="addToCart('دورة BLS - إنعاش الحياة الأساسي', 350, 1)">
+                                    <i class="fa-solid fa-cart-plus me-1"></i> إضافة إلى السلة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="col-md-6">
+                    <div class="card h-100 card-course bg-white">
+                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="ACLS Course">
+                        <div class="card-body">
+                            <span class="badge bg-red mb-2">متقدم / Advanced</span>
+                            <h4 class="card-title fw-bold text-dark">دعم الحياة القلبي المتقدم (ACLS)</h4>
+                            <p class="text-muted small">Advanced Cardiac Life Support</p>
+                            <p class="card-text">دورة متقدمة للكوادر الطبية للتعامل مع السكتات القلبية والسكتات الدماغية، وإدارة مسار الهواء، والتدخلات الدوائية الطارئة.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <span class="fs-4 fw-bold text-red">600 ر.س</span>
+                                <button class="btn btn-dark" onclick="addToCart('دورة ACLS - الإنعاش القلبي المتقدم', 600, 2)">
+                                    <i class="fa-solid fa-cart-plus me-1"></i> إضافة إلى السلة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Protected Content Section (Hidden by default, unlocks after checkout) -->
+    <section id="protected-zone" class="py-5 protected-content">
+        <div class="container">
+            <div class="p-4 bg-white rounded shadow-sm border">
+                <h3 class="text-red fw-bold mb-4"><i class="fa-solid fa-lock-open me-2"></i> تم تفعيل بوابة التدريب الخاصة بك بنجاح!</h3>
+                <div id="course-content-area">
+                    <!-- Content will be injected here via JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5 border-top border-4 border-danger">
+        <div class="container text-center">
+            <p class="mb-1 fw-bold text-red">المركز الوطني للإستشارات والسلامة المهنية</p>
+            <p class="small text-muted mb-0">&copy; 2026 جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-white">
+                <div class="modal-header border-bottom">
+                    <h5 class="modal-title fw-bold text-dark" id="cartModalLabel">سلة المشتريات / Shopping Cart</h5>
+                    <button type="button" class="btn-close" data-bs-shadow="none" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cart-items-container">
+                        <p class="text-muted text-center py-3">السلة فارغة حالياً.</p>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between fw-bold fs-5 px-2">
+                        <span>الإجمالي:</span>
+                        <span id="cart-total" class="text-red">0 ر.س</span>
+                    </div>
+                </div>
+                <div class="modal-footer border-top">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">إغلاق</button>
+                    <button type="button" id="checkout-btn" class="btn bg-red" onclick="processPayment()" disabled>الانتقال للدفع والتحميل</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap & Custom JS Operations -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let cart = [];
+
+        function addToCart(courseName, price, id) {
+            // Check if already in cart
+            if(cart.some(item => item.id === id)) {
+                alert("الدورة مضافة بالفعل في السلة!");
+                return;
+            }
+            cart.push({ id, name: courseName, price });
+            updateCartUI();
+            alert(`تم إضافة "${courseName}" إلى السلة بنجاح.`);
+        }
+
+        function updateCartUI() {
+            const countElem = document.getElementById('cart-count');
+            const container = document.getElementById('cart-items-container');
+            const totalElem = document.getElementById('cart-total');
+            const checkoutBtn = document.getElementById('checkout-btn');
+
+            countElem.innerText = cart.length;
+
+            if(cart.length === 0) {
+                container.innerHTML = '<p class="text-muted text-center py-3">السلة فارغة حالياً.</p>';
+                totalElem.innerText = '0 ر.س';
+                checkoutBtn.disabled = true;
+                return;
+            }
+
+            checkoutBtn.disabled = false;
+            container.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                total += item.price;
+                container.innerHTML += `
+                    <div class="d-flex justify-content-between align-items-center mb-3 p-2 bg-light rounded">
+                        <div>
+                            <h6 class="mb-0 fw-bold">${item.name}</h6>
+                            <small class="text-red">${item.price} ر.س</small>
+                        </div>
+                        <button class="btn btn-sm btn-outline-danger" onclick="removeFromCart(${item.id})"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                `;
+            });
+
+            totalElem.innerText = `${total} ر.س`;
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        }
+
+        function processPayment() {
+            // Hide Cart Modal
+            const cartModal = bootstrap.Modal.getInstance(document.getElementById('cartModal'));
+            cartModal.hide();
+
+            // Simulate Payment Success and unlock appropriate content
+            alert("تمت محاكاة عملية الدفع بنجاح! تم فتح قفل محتوى الدورة المشترآة في أسفل الصفحة.");
+            
+            const protectedZone = document.getElementById('protected-zone');
+            const contentArea = document.getElementById('course-content-area');
+            
+            protectedZone.style.display = 'block';
+            contentArea.innerHTML = '';
+
+            cart.forEach(item => {
+                contentArea.innerHTML += `
+                    <div class="mb-5 border-bottom pb-4">
+                        <h4 class="text-dark fw-bold mb-3"><i class="fa-solid fa-graduation-cap text-red me-2"></i> المحتوى الحصري: ${item.name}</h4>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <h5 class="fw-bold"><i class="fa-solid fa-video text-red me-2"></i> التسجيلات والمحاضرات الفيديويّة القديمة:</h5>
+                                <div class="ratio ratio-169 mb-2 bg-dark rounded d-flex align-items-center justify-content-center text-white" style="height: 200px;">
+                                    <div class="text-center">
+                                        <i class="fa-solid fa-circle-play fs-1 text-red mb-2"></i>
+                                        <p class="mb-0 px-3">فيديو المحاضرة المسجلة رقم 1 (متاح للمشتركين فقط)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="fw-bold"><i class="fa-solid fa-file-powerpoint text-red me-2"></i> حقائب البوربوينت والملفات (PPT):</h5>
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center bg-white">
+                                        <span><i class="fa-regular fa-file-powerpoint text-red me-2"></i> الحقيبة التدريبية الشاملة للقسم الأول.pptx</span>
+                                        <a href="#" class="btn btn-sm bg-red" onclick="alert('جاري تحميل ملف البوربوينت...')"><i class="fa-solid fa-download"></i> تحميل</a>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center bg-white">
+                                        <span><i class="fa-regular fa-file-pdf text-dark me-2"></i> دليل المراجع الطبية المساعدة.pdf</span>
+                                        <a href="#" class="btn btn-sm btn-dark" onclick="alert('جاري تحميل ملف الـ PDF...')"><i class="fa-solid fa-download"></i> تحميل</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Scroll to the content automatically
+            protectedZone.scrollIntoView({ behavior: 'smooth' });
+            
+            // Clear cart after checkout
+            cart = [];
+            updateCartUI();
+        }
+    </script>
+</body>
+</html>
+
